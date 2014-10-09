@@ -344,10 +344,10 @@ var slider = {
 /*Google Maps API*/
 var geocoder;
 var map;
-var query = '4120 Lenox Avenue, NY';
+var query = '2004 Chestnut Street, Philladelphia, PA';
 function initialize() {
 	geocoder = new google.maps.Geocoder();
-	var latlng = new google.maps.LatLng(-34.397, 150.644);
+	var latlng = new google.maps.LatLng(39.951899,-75.173802);
 	var map_canvas = document.getElementById('map_canvas');
 	var map_options = {
 		center: latlng,
@@ -368,7 +368,7 @@ function codeAddress() {
           map: map,
           position: results[0].geometry.location,
 					icon: image,
-					title: 'Eattie Restaurant'
+					title: 'SpiceEnd - Kati Rolls and Platters'
       });
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
