@@ -403,13 +403,13 @@ li.dropdown.open a {
 }
 .info-slider img {
 	display: block;
-	margin: 0 auto 35px auto;
+	margin: 0 auto 15px auto;
 }
 .info-slider h3 {
 	color: #807691;
 	font-size:2.125em;
 	text-align: center;
-	margin: 35px 0;
+	margin: 15px 0;
 }
 .info-slider p {
 	color: #4f4f4f;
