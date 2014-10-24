@@ -182,10 +182,10 @@ header .container {
 	left: 50%;
 	z-index: 1;
 	margin-left: -70px;
-	background: url(../img/logo-small.svg) no-repeat;
+	background: url(../img/logo.png) no-repeat;
 }
 .no-svg .logo {
-	background: url(../img/logo-small.png) no-repeat;
+	background: url(../img/logo.png) no-repeat;
 }
 
 /*Navigation*/
