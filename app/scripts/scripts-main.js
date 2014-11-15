@@ -10,6 +10,7 @@ $(window).load(function() {
 	setTimeout(function(){$('.intro-title').addClass('slideInLeft');},100);
 });
 
+
 /*Checking if it's touch device we disable some functionality due to inconsistency*/
 if (Modernizr.touch) { 
 
@@ -120,7 +121,7 @@ $(document).ready(function(e) {
 		topMenu = $(".navbar"),
 		topMenuHeight = topMenu.outerHeight(),
 		// All list items
-		menuItems = topMenu.find("a"),
+		menuItems = topMenu.find("a");
 		// Anchors corresponding to menu items
 		scrollItems = menuItems.map(function(){
 		  var item = $($(this).attr("href"));
@@ -377,3 +378,10 @@ function codeAddress() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+/** Yelp Redirect **/ 
+$('#yelp').on('click', function(e){
+	e.preventDefault();
+	var url = 'http://www.yelp.com/biz/spice-end-philadelphia-3';
+	window.open(url, '_blank');
+})
