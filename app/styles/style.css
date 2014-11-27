@@ -179,7 +179,7 @@ header .container {
 	height: 90px;
 	position: absolute;
 	top: 0;
-	left: 54%;
+	left: 51%;
 	z-index: 1;
 	margin-left: -70px;
 	background: url(../img/logo_small.png) no-repeat;
@@ -190,8 +190,9 @@ header .container {
 
 /*Navigation*/
 .navbar {
-	width: 100%;
+	width: 80%;
 	padding-top: 30px;
+	margin: 0 auto;
 }
 .nav-left {
 	float: left;
