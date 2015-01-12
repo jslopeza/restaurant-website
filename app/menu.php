@@ -263,7 +263,7 @@
                             </div>
                             <div class="item simpleCart_shelfItem">
                                 <h4 class="item_name">Bottle Beverages</h4>
-                                <span class="price item_price">1 .50</span> 
+                                <span class="price item_price">1 .50</span>
                                 <a href="javascript:;" class="item_add"> Add to Cart </a>
                             </div>
                             <div class="item simpleCart_shelfItem">
@@ -278,10 +278,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-6 col-lg-offset-2 col-md-offset-2 cart">
-						<div class="simpleCart_items col-md-8 col-lg-5"></div>
-						<span class="clear">Total : </span><span class="simpleCart_grandTotal"></span>
+                    <div class="col-md-3 col-lg-offset-3 col-md-offset-3 total">
+                        <form id="checkoutForm" method="POST" action="payment.php">
+                            <span class="clear">Total : </span><span class="simpleCart_grandTotal"></span>
+                            <input type="hidden" name="grandTotal">
+                            <button class="btn btn-primary submit-form">Checkout</button>
+                       </form>
                     </div>
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-lg-offset-2 col-md-offset-2 cart">
+                        <div class="simpleCart_items col-md-8 col-lg-5"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -346,6 +353,7 @@
     <script src="scripts/plugins/jquery.validate.min.js"></script>
     <script src="scripts/simpleCart.js"></script>
     <script src="scripts/scripts-secondary.js"></script>
+    <script src="scripts/cart.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     (function(i, s, o, g, r, a, m) {
@@ -361,21 +369,6 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-XXXXX-X', 'auto');
     ga('send', 'pageview');
-    simpleCart({
-    	cartColumns : [
-    		{ attr: "name", label: "Name"},
-			{ view: "currency", attr: "price", label: "Price"},
-			{ view: "decrement", label: false},
-			{ attr: "quantity", label: "Qty"},
-			{ view: "increment", label: false},
-			{ view: "currency", attr: "total", label: "SubTotal" },
-			{ view: "remove", text: "Remove", label: false}
-    	],
-    	cartStyle : "table"
-    });
-
-    
-    
     </script>
 </body>
 
