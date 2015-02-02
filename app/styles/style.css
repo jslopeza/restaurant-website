@@ -355,6 +355,9 @@ li.dropdown.open a {
 	width: 100%;
 	z-index: 1;
 }
+.about-slider-inner-img{
+        margin-left : 70%;
+}
 .info-bg {
 	position: absolute;
 	width: 100%;
