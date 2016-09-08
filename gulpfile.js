@@ -51,12 +51,12 @@ gulp.task('jshint', function () {
 
 // Optimize Images
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+  return gulp.src('app/img/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('dist/img'))
     .pipe($.size({title: 'images'}));
 });
 
@@ -79,19 +79,19 @@ gulp.task('fonts', function () {
     .pipe($.size({title: 'fonts'}));
 });
 
+// Minfy and copy scripts
+gulp.task('scripts', function() {
+  return gulp.src('app/scripts/**/*.js')
+    .pipe($.uglify())
+    .pipe(gulp.dest('./dist/scripts/'))
+});
+
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/*.scss',
-    'app/styles/**/*.css',
-    'app/styles/components/components.scss'
+    'app/styles/**/*.css'
   ])
-    .pipe($.changed('styles', {extension: '.scss'}))
-    .pipe($.rubySass({
-      style: 'expanded',
-      precision: 10
-    }))
     .on('error', console.error.bind(console))
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(gulp.dest('.tmp/styles'))
@@ -174,7 +174,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', 'scripts', ['html', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights

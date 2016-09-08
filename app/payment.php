@@ -1,6 +1,6 @@
  <?php
-    $loginID        = "6BM4N5vgT";
-    $transactionKey = "4659FpTes99Gr8RP";
+    $loginID        = "";
+    $transactionKey = "";
     $amount         = $_POST['grandTotal'];
     $description    = "Sample Transaction";
     $label          = "Submit Payment"; // The is the label on the 'submit' button
@@ -29,7 +29,7 @@
     // will try to use the mhash library.
     if( phpversion() >= '5.1.2' )
         { $fingerprint = hash_hmac("md5", $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey); }
-    else 
+    else
         { $fingerprint = bin2hex(mhash(MHASH_MD5, $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey)); }
 
 ?>
